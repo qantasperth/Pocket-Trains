@@ -1,0 +1,1 @@
+i try to recreate a pocket trains algorithm
