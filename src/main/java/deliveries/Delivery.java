@@ -5,6 +5,8 @@ import train.Car;
 
 import java.util.ArrayList;
 
+// TODO: reward per car
+
 public class Delivery {
 
     private String id;
@@ -37,8 +39,8 @@ public class Delivery {
         return cars;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public ArrayList<Car> getCars() {
+        return cars;
     }
 
     public String getId() {

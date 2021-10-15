@@ -3,22 +3,22 @@ package network;
 public class Link {
 
     private String id;
-    private Node fromNode;
-    private Node toNode;
+    private RailwayStation fromStation;
+    private RailwayStation toStation;
     private int length;
 
-    public Link(String id, Node fromNode, Node toNode) {
+    public Link(String id, RailwayStation fromStation, RailwayStation toStation) {
         this.id=id;
-        this.fromNode=fromNode;
-        this.toNode=toNode;
+        this.fromStation = fromStation;
+        this.toStation = toStation;
     }
 
-    public Node getFromNode() {
-        return fromNode;
+    public RailwayStation getFromStation() {
+        return fromStation;
     }
 
-    public Node getToNode() {
-        return toNode;
+    public RailwayStation getToStation() {
+        return toStation;
     }
 
     public int getLength() {

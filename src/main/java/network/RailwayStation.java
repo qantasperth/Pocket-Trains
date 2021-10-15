@@ -4,21 +4,24 @@ import deliveries.Delivery;
 import train.Train;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class RailwayStation {
 
+    private int xCoord;
+    private int yCoord;
     private int capacity;
-    private String name;
-    private Node node;
-    private ArrayList<Delivery> deliveries;
+    private final String name;
+    private HashMap<String, Delivery> deliveries;
     private ArrayList<Train> trains;
     boolean isActive;
 
-    public RailwayStation(Node node, String name, int capacity) {
-        this.node=node;
+    public RailwayStation(String name, int xCoord, int yCoord, int capacity) {
+        this.xCoord = xCoord;
+        this.yCoord = yCoord;
         this.name=name;
         this.capacity=capacity;
-        this.deliveries = new ArrayList<Delivery>();
+        this.deliveries = new HashMap<>();
         this.isActive = true;
     }
 
@@ -26,17 +29,19 @@ public class RailwayStation {
         capacity += num;
     }
 
-    public ArrayList<Delivery> getDeliveries() {
+    public HashMap<String, Delivery> getDeliveries() {
         return deliveries;
     }
 
-    public void setDeliveries(ArrayList<Delivery> deliveries) {
-        this.deliveries = deliveries;
+    public void setDeliveries(ArrayList<Delivery> deliveriesList) {
+        for (Delivery delivery : deliveriesList) {
+            deliveries.put(delivery.getId(), delivery);
+        }
     }
 
     public void printDeliveries() {
-        System.out.println("Railway Station: " + name);
-        for (Delivery delivery : deliveries) {
+        System.out.println("Railway Station: " + name + "\n");
+        for (Delivery delivery : deliveries.values()) {
             delivery.printDelivery();
         }
     }
