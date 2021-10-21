@@ -1,7 +1,9 @@
-package network;
+package router;
+
+import network.Link;
+import network.RailwayStation;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Route {
 
@@ -11,8 +13,9 @@ public class Route {
 
     public Route(Link startLink) {
         this.links = new ArrayList<>();
-        this.fromStation = startLink.getFromStation();
         links.add(startLink);
+        this.fromStation = startLink.getFromStation();
+        this.toStation = startLink.getToStation();
     }
 
     public void addLink(Link nextLink) {
@@ -29,4 +32,11 @@ public class Route {
         links.remove(links.size()-1);
     }
 
+    public RailwayStation getFromStation() {
+        return fromStation;
+    }
+
+    public RailwayStation getToStation() {
+        return toStation;
+    }
 }

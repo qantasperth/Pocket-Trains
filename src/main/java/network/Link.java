@@ -21,6 +21,10 @@ public class Link {
         return toStation;
     }
 
+    public String getId() {
+        return id;
+    }
+
     public int getLength() {
         return length;
     }

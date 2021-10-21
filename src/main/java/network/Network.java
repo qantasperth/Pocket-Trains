@@ -2,20 +2,21 @@ package network;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Network {
 
-    private ArrayList<Link> links;
+    private HashMap<String, Link> links;
     private HashMap<String, RailwayStation> railwayStations;
     private String name;
 
     public Network(String name) {
-        this.links = new ArrayList<>();
+        this.links = new HashMap<>();
         this.railwayStations = new HashMap<>();
         this.name = name;
     }
 
-    public ArrayList<Link> getLinks() {
+    public HashMap<String, Link> getLinks() {
         return links;
     }
 

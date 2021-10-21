@@ -16,7 +16,7 @@ public class Delivery {
     private int numCars;
     private ArrayList<Car> cars;
     private int reward;
-    private String status;
+    private String status; // open, loaded, in delivery, stopover, delivered
 
     public Delivery(String id, String contents, RailwayStation origin,
                     RailwayStation destination, int numCars, int reward) {
@@ -45,6 +45,18 @@ public class Delivery {
 
     public String getId() {
         return id;
+    }
+
+    public RailwayStation getOrigin() {
+        return origin;
+    }
+
+    public RailwayStation getDestination() {
+        return destination;
+    }
+
+    public void setStatus (String status) {
+        this.status = status;
     }
 
     public void printDelivery() {

@@ -1,7 +1,5 @@
 package network;
 
-import java.util.ArrayList;
-
 public class NetworkGenerator {
 
     public NetworkGenerator() {}
@@ -31,16 +29,16 @@ public class NetworkGenerator {
         Link link_24 = new Link("link_24", station_2, station_4);
         Link link_42 = new Link("link_42", station_4, station_2);
 
-        network.getLinks().add(link_12);
-        network.getLinks().add(link_21);
-        network.getLinks().add(link_23);
-        network.getLinks().add(link_32);
-        network.getLinks().add(link_34);
-        network.getLinks().add(link_43);
-        network.getLinks().add(link_41);
-        network.getLinks().add(link_14);
-        network.getLinks().add(link_24);
-        network.getLinks().add(link_42);
+        network.getLinks().put(link_12.getId(), link_12);
+        network.getLinks().put(link_21.getId(), link_21);
+        network.getLinks().put(link_23.getId(), link_23);
+        network.getLinks().put(link_32.getId(), link_32);
+        network.getLinks().put(link_34.getId(), link_34);
+        network.getLinks().put(link_43.getId(), link_43);
+        network.getLinks().put(link_41.getId(), link_41);
+        network.getLinks().put(link_14.getId(), link_14);
+        network.getLinks().put(link_24.getId(), link_24);
+        network.getLinks().put(link_42.getId(), link_42);
 
         return network;
     }
